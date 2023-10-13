@@ -76,7 +76,7 @@ var myLineChart = new Chart(ctx, {
         ticks: {
           maxTicksLimit: 5,
           padding: 10,
-          // Include a dollar sign in the ticks
+          // Include a degree sign
           callback: function(value, index, values) {
             return number_format(value) +  '\u00B0C';
           }
@@ -110,7 +110,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+              return datasetLabel + ": " + number_format(tooltipItem.yLabel) + '\u00B0C';
         }
       }
     }
